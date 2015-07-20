@@ -1,7 +1,10 @@
-// TODO: import required modules
+import './home.styl';
+import angular from 'angular';
+import uiRouter from 'angular-ui-router';
+import _ from 'lodash';
 
-const home = angular.module('home', [
-
+export const home = angular.module('home', [
+  uiRouter
 ])
 .config(function($stateProvider, $urlRouterProvider) {
   $urlRouterProvider.otherwise('/');
@@ -28,10 +31,7 @@ const home = angular.module('home', [
 })
 .controller('HomeController', function($scope) {
   $scope.title = 'Welcome to the blog!'
-  // TODO: be sure to import lodash!
   $scope.items = _.times(5, i => {
     return `I am item ${i}`;
   });
 });
-
-// TODO: export the module
