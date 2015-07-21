@@ -5,7 +5,14 @@
 const posts = ($http, API) => {
   // TODO: create crud methods
   // use ES2015 method, property shortcuts
-  return {};
+  return {
+  	getAll() {
+  		return API + 'posts';
+  	}
+  };
 };
 
 posts.$inject = ['$http', 'API'];
+
+
+export {posts};
